@@ -17,7 +17,7 @@ initiate_db()
 cursor.execute("DELETE FROM Products")
 for i in range(1, 5):
     cursor.execute('INSERT INTO Products(title, description, price) VALUES(?, ?, ?)',
-                   (f"Product: {i}", f"Описание: {i}", f"Цена: {i*100}"))
+                   (f"Product: {i}", f"Описание: {i}", i*100))
 def get_all_products():
     cursor.execute('SELECT * FROM Products')
     return cursor.fetchall()
